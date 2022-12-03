@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Edit Entry{% endblock %}
+{% block content %}
+<form action="{{ url_for('edit') }}" method="post">
+    <h3>{{ book.title }}</h3>
+    <p>Current Rating: {{ book.rating }}</p>
+    <input type="hidden" name="id" value="{{ book.id }}">
+    <input type="text" name="rating" value="{{book.rating}}">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
